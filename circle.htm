@@ -1,0 +1,36 @@
+<!--  TODO:
+    - przesuwanie muszką po kole i ciągła zmiana 
+    - hsv zdjecie jako tło diva
+    - on mousemove i click sie wykonuje funkcja do zmiany koloru
+-->
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="lolkittens" />
+    <meta charset="UTF-8" />
+
+	<title>Untitled 1</title>
+<style>
+#hsvCircleImage {
+    margin: 30px;   
+}
+
+
+</style>
+</head>
+
+<body>
+Hue: <span id="hue">0</span> <br />
+Saturation: <span id="saturation">0</span> <br />
+Value: <span id="value" >0</span> <br />
+
+<img src="img/hsvCircleFit.png" id="hsvCircleImage" alt="circle image" /> <br />
+
+value: <br />
+<input type="range" id="HSVvalueInput" min="0" max="1" step="0.01" autocomplete="off" value="0" oninput="HSVvalueOutput.value = HSVvalueInput.value" />
+<output id="HSVvalueOutput"> 0 </output>
+<script src="js/jquery.js"></script>
+<script src="js/circle.js"></script>
+
+</body>
+</html>
