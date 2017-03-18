@@ -19,6 +19,7 @@ circleImage.on("click", function(e) {
         HSVhue = angle;
     }
     changeHTMLoutput();
+    changePreviewDivColor();
     console.log(HSVhue, HSVsaturation, HSVvalue);
 });
 
@@ -33,6 +34,7 @@ function getDistanceFromCenter(mouseX, mouseY){
 
 function getSaturation( distance ){
     var saturation = ( distance / circleRadius );
+    saturation = Math.round( saturation * 100) / 100;
     return saturation;   
 }
 
@@ -57,9 +59,36 @@ function changeHTMLoutput(){
 }
 
 $("#HSVvalueInput").on("change", function() {
-    HSVvalue = HSVvalueInput.value;
+    HSVvalue = parseFloat(HSVvalueInput.value);
     changeHTMLoutput();
 });
 
-// dodac przesówak od 0 do 1 dla v
-// zamiana na rgb 
+function mix(a, b, v)
+{
+    return (1-v)*a + v*b;
+}
+
+function HSVtoRGB(H, S, V)
+{
+    var V2 = V * (1 - S);
+    var r  = ((H>=0 && H<=60) || (H>=300 && H<=360)) ? V : ((H>=120 && H<=240) ? V2 : ((H>=60 && H<=120) ? mix(V,V2,(H-60)/60) : ((H>=240 && H<=300) ? mix(V2,V,(H-240)/60) : 0)));
+    var g  = (H>=60 && H<=180) ? V : ((H>=240 && H<=360) ? V2 : ((H>=0 && H<=60) ? mix(V2,V,H/60) : ((H>=180 && H<=240) ? mix(V,V2,(H-180)/60) : 0)));
+    var b  = (H>=0 && H<=120) ? V2 : ((H>=180 && H<=300) ? V : ((H>=120 && H<=180) ? mix(V2,V,(H-120)/60) : ((H>=300 && H<=360) ? mix(V,V2,(H-300)/60) : 0)));
+
+    return {
+        r : Math.round(r * 255),
+        g : Math.round(g * 255),
+        b : Math.round(b * 255)
+    };
+}
+
+function changePreviewDivColor(){
+    rgbColors = HSVtoRGB(HSVhue, HSVsaturation, HSVvalue);
+    $("div#colorPreview").css("background", "rgb("+ rgbColors.r +","+ 
+            rgbColors.g +","+  rgbColors.b +")");
+    console.log( rgbColors );
+}
+
+// pokazywanie na kwadracie jak w fraktalach 
+// zamiana hsv na rgb 
+// value nakłada opacity na obraz albo robi bardiej szare !!!!
