@@ -1,5 +1,6 @@
 
-var circleImage = $("#hsvCircleImage");
+//var circleImage = $("#hsvCircleImage");
+var circleImage = $("#hsvCircle");
 var circleRadius = circleImage.width()/2; 
 var HSVhue = 0;
 var HSVsaturation = 0;
@@ -89,6 +90,6 @@ function changePreviewDivColor(){
     console.log( rgbColors );
 }
 
-// pokazywanie na kwadracie jak w fraktalach 
-// zamiana hsv na rgb 
-// value nakłada opacity na obraz albo robi bardiej szare !!!!
+
+// zmiana opacity na podstawie value
+// dac 1 na poczatek dla value
