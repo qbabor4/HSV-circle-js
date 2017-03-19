@@ -61,6 +61,7 @@ function changeHTMLoutput(){
 
 $("#HSVvalueInput").on("change", function() {
     HSVvalue = parseFloat(HSVvalueInput.value);
+    changeHSVcircleOpacity();
     changeHTMLoutput();
 });
 
@@ -90,6 +91,9 @@ function changePreviewDivColor(){
     console.log( rgbColors );
 }
 
-
+function changeHSVcircleOpacity(){
+    var divOpacity = 1 - HSVvalue;
+    $("#blackFilter").css("opacity", divOpacity);
+}
 // zmiana opacity na podstawie value
 // dac 1 na poczatek dla value
