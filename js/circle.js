@@ -95,5 +95,6 @@ function changeHSVcircleOpacity(){
     var divOpacity = 1 - HSVvalue;
     $("#blackFilter").css("opacity", divOpacity);
 }
-// zmiana opacity na podstawie value
-// dac 1 na poczatek dla value
+
+// jak move i clicked to zmienia 
+// hasło na stale do git a
