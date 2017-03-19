@@ -7,6 +7,7 @@ var HSVsaturation = 0;
 var HSVvalue = 1;
 
 circleImage.on("click", function(e) {
+    
     var mousePos = getMousePos( $(this)[0], e ); 
     
     //console.log(mousePos.x, mousePos.y);
@@ -98,3 +99,4 @@ function changeHSVcircleOpacity(){
 
 // jak move i clicked to zmienia 
 // hasło na stale do git a
+// jak zaznaczenie liczby to sie caly obrazek przesuwa
