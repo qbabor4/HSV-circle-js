@@ -4,7 +4,7 @@ var circleImage = $("#hsvCircle");
 var circleRadius = circleImage.width()/2; 
 var HSVhue = 0;
 var HSVsaturation = 0;
-var HSVvalue = 0;
+var HSVvalue = 1;
 
 circleImage.on("click", function(e) {
     var mousePos = getMousePos( $(this)[0], e ); 
