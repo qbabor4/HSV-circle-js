@@ -6,4 +6,4 @@
   
   output color is given to user as preview on box bellow color circle.
   
-  
+  ![alt tag](https://raw.githubusercontent.com/qbabor4projectname/master/preview.png)
