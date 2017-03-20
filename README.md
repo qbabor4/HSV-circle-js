@@ -8,6 +8,6 @@
   
   ### You can see working program on http://qbabor4.ct8.pl/hsvToRgb/circle.htm 
   
-  ##Preview:
+  ## Preview:
   
 ![Alt text](https://github.com/qbabor4/HSV-circle-js/blob/master/preview.png?raw=true "Optional Title")
